@@ -1,4 +1,6 @@
-class AudioSynth {
+import AudioSynthInstrument from './AudioSynthInstrument';
+
+export default class AudioSynth {
   _debug = false;
   _bitsPerSample = 16;
   _channels = 1;

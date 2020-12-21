@@ -1,4 +1,4 @@
-class AudioSynthInstrument {
+export default class AudioSynthInstrument {
   constructor(parent, name, soundId) {
     this.parent = parent;
     this.name = name;
