@@ -1,0 +1,16 @@
+.chord {
+  background-color: #eeeeee;
+  min-width: 80px;
+  border: none;
+  margin: 8px;
+  padding: 8px 24px;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
