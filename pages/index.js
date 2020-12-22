@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Chord from '../components/Chord';
+import Keyboard from '../components/Keyboard';
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
           <Chord chordName="d" notes={['D4', 'F4', 'A4']} />
           <Chord chordName="F" notes={['F3', 'A3', 'C3']} />
         </div>
+
+        <Keyboard />
       </main>
 
       <style jsx>{`
@@ -50,6 +53,7 @@ export default function Home() {
       <style jsx global>{`
         html,
         body {
+          background-color: #eeeeee;
           padding: 0;
           margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
