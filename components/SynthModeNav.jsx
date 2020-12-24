@@ -6,14 +6,11 @@ export default function SynthModeNav(props) {
   const [activeTabId, setActiveTabId] = useState(0);
 
   useEffect(() => {
-    const children = Children.map(props.children, (child, i) => {
-      return cloneElement(child, { id: i })
-    });
-    setTabs(children);
+    setTabs(props.children);
   }, [props.children]);
 
   function isActiveTabId(tabId) {
-    return tabId === activeTabId;
+    return parseInt(tabId) === activeTabId;
   }
 
   return (
@@ -21,9 +18,9 @@ export default function SynthModeNav(props) {
       <nav className={styles.synthModeNav}>
         { tabs.map(tab => (
           <div
-              key={tab.props.id}
+              key={tab.key}
               className={styles.synthModeTab}
-              onClick={() => setActiveTabId(tab.props.id)}
+              onClick={() => setActiveTabId(parseInt(tab.key))}
           >{tab.props.title}</div>
         )) }
 
@@ -33,14 +30,12 @@ export default function SynthModeNav(props) {
         ></div>
       </nav>
       
-      <div className={styles.tabContentWrapper}>
-        { tabs.map(tab => (
-          <div
-            key={tab.props.id}
-            className={isActiveTabId(tab.props.id) ? styles.activeTabContent : styles.inactiveTabContent}
-          >{tab}</div>
-        ))}
-      </div>
+      { tabs.map(tab => (
+        <div
+          key={tab.key}
+          className={isActiveTabId(tab.key) ? styles.activeTabContent : styles.inactiveTabContent}
+        >{tab}</div>
+      ))}
     </div>
   )
 }

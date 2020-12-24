@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="title">Synthesizer</h1>
 
         <SynthModeNav>
-          <div title="chord">
+          <div title="chord" key="0">
             <div style={{ display: 'flex' }}>
               <Chord chordName="g" notes={['G3', 'Bb3', 'D3']} />
               <Chord chordName="a" notes={['A3', 'C4', 'E4']} />
@@ -25,7 +25,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div title="keyboard" style={{display: 'flex'}}>
+          <div title="keyboard" key="1" style={{display: 'flex'}}>
             <Keyboard />
           </div>
         </SynthModeNav>
