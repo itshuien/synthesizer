@@ -1,0 +1,29 @@
+.volumeSliderWrapper {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  padding: 16px;
+  min-width: 296px;
+  justify-content: space-between;
+}
+
+.volumeSlider {
+  appearance: none;
+  height: 4px;
+  background-color: #cccccc;
+  border-radius: 4px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: #666666;
+    cursor: pointer;
+  }
+}
