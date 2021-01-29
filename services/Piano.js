@@ -27,7 +27,7 @@ export default class Piano {
       let pianoNoteRange = this.pianoNotes;
 
       if (i === startingOctave) pianoNoteRange = pianoNoteRange.slice(startNoteIndex);
-      else if (i === endingOctave) pianoNoteRange = pianoNoteRange.splice(0, startNoteIndex);
+      else if (i === endingOctave) pianoNoteRange = pianoNoteRange.slice(0, startNoteIndex);
 
       pianoKeys.push(...this.getOctaveKeys(pianoNoteRange, i));
     }
