@@ -1,17 +1,20 @@
 import styles from './Key.module.scss';
+import Piano from '../services/Piano';
 
-export default function Key(props) {
+const { isWhiteKey } = Piano;
+
+export default function Key({ synth, note, octave }) {
   function playNote() {
-    props.synth.triggerAttack(props.note);
+    synth.triggerAttack(`${note}${octave}`);
   }
 
   function releaseNote() {
-    props.synth.triggerRelease(props.note);
+    synth.triggerRelease(`${note}${octave}`);
   }
 
   return (
     <div
-      className={props.type === 'white' ? styles.whiteKey : styles.blackKey }
+      className={isWhiteKey(note) ? styles.whiteKey : styles.blackKey }
       onMouseDown={playNote}
       onMouseUp={releaseNote}
       onMouseLeave={releaseNote}

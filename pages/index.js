@@ -25,7 +25,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div title="keyboard" key="1" style={{display: 'flex'}}>
+          <div title="keyboard" key="1">
             <Keyboard />
           </div>
         </SynthModeNav>
