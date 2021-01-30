@@ -1,9 +1,9 @@
-import { useState, useEffect, Children, cloneElement } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './SynthModeNav.module.scss';
 
 export default function SynthModeNav(props) {
   const [tabs, setTabs] = useState([]);
-  const [activeTabId, setActiveTabId] = useState(0);
+  const [activeTabId, setActiveTabId] = useState(props.activeTabId);
 
   useEffect(() => {
     setTabs(props.children);
@@ -21,7 +21,7 @@ export default function SynthModeNav(props) {
               key={tab.key}
               className={styles.synthModeTab}
               onClick={() => setActiveTabId(parseInt(tab.key))}
-          >{tab.props.title}</div>
+          >{tab.props['data-mode']}</div>
         )) }
 
         <div

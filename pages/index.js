@@ -13,8 +13,12 @@ export default function Home() {
       <main>
         <h1 className="title">Synthesizer</h1>
 
-        <SynthModeNav>
-          <div title="chord" key="0">
+        <SynthModeNav activeTabId={0}>
+          <div data-mode="keyboard" key="0">
+            <Keyboard />
+          </div>
+
+          <div data-mode="chord" key="1">
             <div style={{ display: 'flex' }}>
               <Chord chordName="g" notes={['G3', 'Bb3', 'D3']} />
               <Chord chordName="a" notes={['A3', 'C4', 'E4']} />
@@ -23,10 +27,6 @@ export default function Home() {
               <Chord chordName="d" notes={['D4', 'F4', 'A4']} />
               <Chord chordName="F" notes={['F3', 'A3', 'C3']} />
             </div>
-          </div>
-
-          <div title="keyboard" key="1">
-            <Keyboard />
           </div>
         </SynthModeNav>
       </main>
