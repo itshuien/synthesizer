@@ -15,9 +15,12 @@
   height: 192px;
   background-color: #ffffff;
   margin: 3px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 5px 0 0 #dddddd;
 
   &:hover {
-    background-color: #fcfcfc;
+    background-color: #fafafa;
+    box-shadow: 0 5px 0 0 #cccccc;
   }
 }
 
@@ -26,14 +29,16 @@
 
   width: 32px;
   height: 112px;
-  background-color: #222222;
+  background-color: #444444;
   margin-top: 3px;
   margin-left: -16px;
   margin-right: -16px;
   z-index: 10;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 8px 0 0 #000000;
 
   &:hover {
-    background-color: #111111;
+    background-color: #222222;
   }
 }
 
